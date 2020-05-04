@@ -1,0 +1,12 @@
+.block__link {
+   align-self: center;
+   font-weight: 500; 
+   
+}
+
+@media screen and (max-width: 900px) {
+   .block__link {
+     margin-top: 16px; 
+     align-self: flex-start; 
+   }
+ }

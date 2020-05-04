@@ -1,0 +1,23 @@
+.skills__cards {
+    display: flex;
+    flex-basis: 570px;
+    justify-content: space-between;
+    margin-right: 10.3%;
+    margin-top: 15px;
+    
+}
+
+@media screen and (max-width: 1200px) {
+    .skills__cards {
+        margin-right: 0;
+    }
+  }
+
+@media screen and (max-width: 550px) {
+    .skills__cards {
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 50px;
+    }
+  }

@@ -1,0 +1,17 @@
+@import url(./_active/menu__item_active.css);
+
+.menu__item {
+    font-weight: 500;    
+}
+.menu__item:not(:last-child) {
+    margin-right: 34px;
+}
+.menu__item:active {
+    color: #FFF;
+}
+
+@media screen and (max-width: 450px) {
+    .menu__item:not(:last-child) {
+    margin-right: 11px;   
+    }
+  }

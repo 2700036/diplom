@@ -1,0 +1,25 @@
+.card__image {
+    object-fit: cover;
+    margin: -24px -24px 20px -24px;
+    height: 272px; 
+}
+
+@media screen and (max-width: 1100px) {
+    .card__image {
+        margin: -24px -24px 16px -24px;
+        height: 210px;  
+    }
+  }
+
+@media screen and (max-width: 770px) {
+    .card__image {
+        margin: -24px -24px 16px -24px;
+        height: 165px;  
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .card__image {
+        height: 196px;  
+    }
+  }

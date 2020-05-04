@@ -1,0 +1,36 @@
+@import url(./grid/grid.css);
+@import url(./__title/table__title.css);
+@import url(./__date/table__date.css);
+@import url(./__bar/table__bar.css);
+@import url(./__day/table__day.css);
+@import url(./__grid/table__grid.css);
+@import url(./__header/table__header.css);
+@import url(./__text/table__text.css);
+@import url(./__100/table__100.css);
+
+.table {
+    background: #F5F6F7;
+    padding-top: 5.5%;
+    padding-bottom: 3%;
+}
+@media screen and (max-width: 770px) {
+    .table {
+        padding-bottom: 0;
+    }
+  }
+
+@media screen and (max-width: 550px) {
+    .table {
+        height: 475px;
+    }
+  }
+
+
+/* временная разметка для вёрстки, будет удалена, когда бары будут заполняться от API */
+#bar-1 {width: 15%;} 
+#bar-2 {width: 18%;}
+#bar-3 {width: 11%;}
+#bar-4 {width: 39%;}
+#bar-5 {width: 45%;}
+#bar-6 {width: 73%;}
+#bar-7 {width: 34%;}

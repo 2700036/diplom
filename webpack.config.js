@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // Подключили к проекту плагин
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackMd5Hash = require("webpack-md5-hash");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -8,19 +8,21 @@ const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
   entry: {
-    main: "./src/scripts/index.js"
+    main: "./src/pages/index.js",
+    about: "./src/pages/about.js",
+    analytics: "./src/pages/analytics.js"
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "[name].[chunkhash].js"
+    filename: "./scripts/[name].[chunkhash].js"
   },
   module: {
     rules: [
       {
-        // тут описываются правила
-        test: /\.js$/, // регулярное выражение, которое ищет все js файлы
-        use: { loader: "babel-loader" }, // весь JS обрабатывается пакетом babel-loader
-        exclude: /node_modules/ // исключает папку node_modules
+        
+        test: /\.js$/, 
+        use: { loader: "babel-loader" }, 
+        exclude: /node_modules/ 
       },
       {
         test: /\.css$/i,
@@ -33,7 +35,7 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|ico|svg)$/,
         use: [
-          "file-loader?name=./images/[name].[ext]", // указали папку, куда складывать изображения
+          "file-loader?name=./images/[name].[ext]", 
           {
             loader: "image-webpack-loader",
             options: {
@@ -51,13 +53,25 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "style.[contenthash].css"
+      filename: "./[name].[contenthash].css"
     }),
     new HtmlWebpackPlugin({
-      filename: "index.html", // откуда брать образец для сравнения с текущим видом проекта
-      template: "./src/index.html", // имя выходного файла, то есть того, что окажется в папке dist после сборки
-      inject: false, // стили НЕ нужно прописывать внутри тегов
-      hash: false // считать или нет хеш
+      filename: "index.html", 
+      template: "./src/index.html", 
+      inject: false, 
+      hash: true 
+    }),
+    new HtmlWebpackPlugin({
+      filename: "about.html",
+      template: "./src/about.html", 
+      inject: false, 
+      hash: true 
+    }),
+    new HtmlWebpackPlugin({
+      filename: "analytics.html", 
+      template: "./src/analytics.html", 
+      inject: false, 
+      hash: true 
     }),
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(process.env.NODE_ENV)

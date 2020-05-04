@@ -1,0 +1,14 @@
+.not-found__pic {
+   width: 84px;
+   height: 84px;
+   margin-top: 86px;
+   margin-bottom: 31px;
+   transform: translateX(5px); 
+}
+
+@media screen and (max-width: 770px) {
+   .not-found__pic {
+      margin-top: 60px;
+      margin-bottom: 20px;
+   }
+ }

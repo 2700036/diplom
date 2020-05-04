@@ -1,0 +1,14 @@
+.button { 
+    font-weight: 500;   
+    height: 64px;
+    border: 0;
+    transition: all .1s linear;
+    cursor: pointer;
+    outline: none; 
+}
+
+@media screen and (max-width: 770px) {
+    .button {
+        height: 56px;
+    }
+  }

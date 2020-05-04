@@ -1,0 +1,5 @@
+.slider__cardlist {
+    display: flex;
+    height: 288px;
+    width: fit-content;
+}

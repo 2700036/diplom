@@ -1,0 +1,12 @@
+.footer__social-menu {
+    
+}
+
+@media screen and (max-width: 750px) {
+    .footer__social-menu {
+        position: absolute;
+        right: 5.21%;
+        top: 0%;
+          
+    }
+  }

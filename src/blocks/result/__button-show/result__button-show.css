@@ -1,0 +1,10 @@
+.result__button-show {
+    width: 288px;
+    border-radius: 80px;
+    align-self: center;
+    background: #FFF;
+
+}
+.result__button-show:active {
+    opacity: .9;
+}

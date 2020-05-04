@@ -1,0 +1,19 @@
+.preloader__text {
+    margin: auto;
+    margin-top: 178px;
+
+    
+    color: #B6BCBF;
+}
+
+@media screen and (max-width: 770px) {
+    .preloader__text {
+        margin-top: 158px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .preloader__text {
+        margin-top: 120px;  
+    }
+  }

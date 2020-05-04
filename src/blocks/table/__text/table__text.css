@@ -1,0 +1,15 @@
+.table__text {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;    
+    color: #B6BCBF;  
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+@media screen and (max-width: 550px) {
+    .table__text {
+      display: none;
+    }
+  }

@@ -1,0 +1,9 @@
+.table__header {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #B6BCBF;  
+    display: flex;
+    align-items: flex-start;
+}
