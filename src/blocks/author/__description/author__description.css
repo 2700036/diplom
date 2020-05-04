@@ -1,0 +1,10 @@
+.author__description {
+    margin-bottom: 4%; 
+}
+
+@media screen and (max-width: 770px) {
+    .author__description {
+        margin-bottom: 1px; 
+      
+    }
+  }

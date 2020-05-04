@@ -1,0 +1,19 @@
+.root__section {
+  padding-left: 7.22%;
+  padding-right: 7.22%;
+  
+}
+
+@media screen and (max-width: 770px) {
+  .root__section {
+    padding-left: 5.21%;
+    padding-right: 5.21%;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .root__section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}

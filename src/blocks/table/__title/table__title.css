@@ -1,0 +1,12 @@
+.table__title {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 26px;
+    line-height: 30px;
+    margin-bottom: 48px;
+}
+
+@media screen and (max-width: 550px) {
+    .table__title {
+        margin-bottom: 10px;
+    }
+  }

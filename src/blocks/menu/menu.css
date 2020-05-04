@@ -1,0 +1,10 @@
+@import url(./__item/menu__item.css);
+
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: baseline;    
+    color: #B6BCBF;
+
+}

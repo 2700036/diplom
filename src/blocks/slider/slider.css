@@ -1,0 +1,28 @@
+@import url(./__bullets/slider__bullets.css);
+@import url(./__button/slider__button.css);
+@import url(./__card-author/slider__card-author.css);
+@import url(./__card-commit/slider__card-commit.css);
+@import url(./__card-date/slider__card-date.css);
+@import url(./__card-mail/slider__card-mail.css);
+@import url(./__card-name/slider__card-name.css);
+@import url(./__card-photo/slider__card-photo.css);
+@import url(./__card/slider__card.css);
+@import url(./__cardlist/slider__cardlist.css);
+@import url(./__card-name-mail-wrapper/slider__card-name-mail-wrapper.css);
+
+.slider {   
+    position: relative;
+    width: 100%;
+    height: 288px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .slider {
+      margin-top: 16px; 
+       
+    }
+  }

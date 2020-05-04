@@ -1,0 +1,11 @@
+.author__content {
+    max-width: 48.7%;
+    margin-top: 4.3%;
+}
+
+@media screen and (max-width: 1100px) {
+    .author__content {
+        max-width: 100%;
+        margin-top: 0;  
+    }
+  }

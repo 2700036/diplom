@@ -1,0 +1,23 @@
+.search__content {
+    max-width: 815px;
+    height: 336px;
+    margin: 5.55% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 770px) {
+    .search__content {
+        height: 248px;
+        max-width: 530px;
+        margin-top: 5.20%;
+        margin-bottom: 6.25%;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .search__content {
+        margin-top: 9.2%;
+    }
+  }

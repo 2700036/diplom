@@ -1,0 +1,10 @@
+.slider__card-date {
+    color: #B6BCBF;
+}
+
+@media screen and (max-width: 550px) {
+    .slider__card-date {
+     font-size: 14px; 
+      
+    }
+  }

@@ -1,0 +1,19 @@
+.result__header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+}
+
+@media screen and (max-width: 770px) {
+  .result__header {
+    font-size: 18px;
+    
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .result__header {
+    flex-direction: column; 
+    
+  }
+}

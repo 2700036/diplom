@@ -1,0 +1,16 @@
+.slider__card-author {
+    display: flex;
+    margin: 16px 0 16px 0;
+}
+
+@media screen and (max-width: 1100px) {
+    .slider__card-author {
+        margin: 14px 0 14px 0; 
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .slider__card-author {
+        margin: 10px 0 10px 0; 
+    }
+  } 

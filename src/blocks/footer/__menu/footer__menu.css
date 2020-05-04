@@ -1,0 +1,19 @@
+.footer__menu {
+    flex-basis: 406px;
+    justify-content: space-between;
+    color: #1A1B22;
+}
+
+@media screen and (max-width: 1100px) {
+    .footer__menu {
+        flex-basis: 370px;  
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .footer__menu {
+        display: block;
+        width: 120px;
+          
+    }
+  }

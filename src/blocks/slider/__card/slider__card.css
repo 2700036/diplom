@@ -1,0 +1,25 @@
+.slider__card { 
+   display: flex;
+   flex-direction: column;
+   width: 400px;
+   height: 288px;
+   background: #FFF; 
+   border-radius: 16px;
+   padding: 24px;
+}
+
+.slider__card:not(:last-child) {
+    margin-right: 16px;
+}
+
+@media screen and (max-width: 770px) {
+    .slider__card {
+      height: 242px;
+    }
+  }
+
+@media screen and (max-width: 400px) {
+    .slider__card {
+      height: 264px;
+    }
+  } 

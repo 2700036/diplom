@@ -1,0 +1,19 @@
+@import url(./__asked/stats__asked.css);
+@import url(./__sum-titles/stats__sum-titles.css);
+@import url(./__sum-week/stats__sum-week.css);
+@import url(./__path/stats__path.css);
+@import url(./__description/stats__description.css);
+
+.stats {
+    padding-top: 40px;
+    padding-bottom: 5.2%;;
+}
+
+@media screen and (max-width: 550px) {
+    .stats {
+        padding-top: 8px;
+    }
+    .stats .title {
+        margin-bottom: 9px;
+    }
+  }

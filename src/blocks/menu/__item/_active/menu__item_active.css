@@ -1,0 +1,19 @@
+@import url(./_theme-bright/menu__item_active_theme-bright.css);
+@import url(./_theme-dark/menu__item_active_theme-dark.css);
+
+.menu__item_active {
+    line-height: 75px;
+    
+}
+
+@media screen and (max-width: 770px) {
+    .menu__item_active {
+        line-height: 60px; 
+    }
+  }
+
+@media screen and (max-width: 500px) {
+    .menu__item_active {
+        line-height: 53px; 
+    }
+  }

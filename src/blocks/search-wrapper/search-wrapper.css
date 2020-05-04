@@ -1,0 +1,20 @@
+.search-wrapper {
+    background: url('../../images/wrprbackground.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;    
+    height: 576px;
+    color: #FFF;   
+}
+@media screen and (max-width: 770px) {
+    .search-wrapper {
+     height: 400px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .search-wrapper {
+        height: 450px;   
+    }
+  }

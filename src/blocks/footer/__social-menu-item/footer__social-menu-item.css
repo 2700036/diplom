@@ -1,0 +1,7 @@
+.footer__social-menu-item {
+    width: 20px; 
+    height: 20px;  
+}
+.footer__social-menu-item:not(:last-child) {
+    margin-right: 26px;
+}
