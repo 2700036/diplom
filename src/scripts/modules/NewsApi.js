@@ -1,14 +1,10 @@
-import {searchLanguage} from '../constants/constants';
-import {apiKey} from '../constants/constants';
-import {weekAgoDate} from '../constants/constants';
-import {todayDate} from '../constants/constants';
-
 export class NewsAPI {
-    constructor (...args){      
-      this._language = searchLanguage;
-      this._fromDate = weekAgoDate;
-      this._toDate = todayDate;
-      this._key = apiKey;
+    constructor (opt){      
+      this._language = opt.searchLanguage;
+      this._fromDate = opt.weekAgoDate;
+      this._toDate = opt.todayDate;
+      this._key = opt.apiKey;
+      this.getNews = this.getNews.bind(this);
       
 
     }
@@ -25,4 +21,4 @@ export class NewsAPI {
     }   
 }
 
-export const newsAPI = new NewsAPI(searchLanguage, apiKey, weekAgoDate, todayDate);
+

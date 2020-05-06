@@ -1,5 +1,6 @@
 .card__image {
     object-fit: cover;
+    object-position: left;
     margin: -24px -24px 20px -24px;
     height: 272px; 
 }
