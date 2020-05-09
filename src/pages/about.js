@@ -1,6 +1,8 @@
 import '../blocks/swiper/swiper.css';
 import '../pages/about.css';
 import Swiper from '../../node_modules/swiper/js/swiper';
+console.log('about');
+
 
 var mySwiper = new Swiper ('.swiper-container', {
   slidesPerView: 3.5,

@@ -1,9 +1,12 @@
 export default class DataStorage {
     constructor (){
-
+       
     }
     saveNews(arr, theme){
         localStorage.clear ();
+        arr.articles.forEach(el => {            
+            el.publishedAt = el.publishedAt.slice(0, 10); 
+        })
         localStorage.setItem('newsArticles', JSON.stringify(arr.articles));
         localStorage.setItem('newsTheme', theme);
         localStorage.setItem('total', arr.totalResults)
@@ -18,6 +21,7 @@ export default class DataStorage {
     getTotal(){
         return localStorage.getItem('total')
     }
+    
 }
 
 

@@ -43,6 +43,38 @@
       <p class="not-found__subtitle">К сожалению по вашему запросу
 ничего не найдено.</p>
   </section>
+  <section class="disconnect disconnect_hidden">
+      <svg class="disconnect__img" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background:0 0">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 100 100" style="transform-origin:50px 50px 0" xml:space="preserve">
+          <g transform="scale(.6)" style="transform-origin:50px 50px 0">
+            <style>
+              .st71{fill:none;stroke-width:5;stroke:#000;stroke-miterlimit:10}
+            </style>
+            <circle cx="50" cy="50" r="40" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="6" style="fill:#fff;stroke:#000;stroke-miterlimit:10;stroke-width:1"/>
+            <path d="M31.866 71.591c2.57-7.556 9.709-13 18.134-13s15.564 5.444 18.134 13" stroke="#000" stroke-linecap="round" fill="none" stroke-width="5" stroke-miterlimit="10" style="stroke:#000;stroke-linecap:round;fill:none;stroke-width:1;stroke-miterlimit:10"/>
+            <g class="ld ld-swim-px" style="transform-origin:50px 50px 0;animation-duration:1.3s;animation-delay:-1.05625s;animation-direction:normal">
+              <path class="st71" stroke="#000" d="M27.5 32.409l12 12"/>
+            </g>
+            <g class="ld ld-swim-px" style="transform-origin:50px 50px 0;animation-duration:1.3s;animation-delay:-.975s;animation-direction:normal">
+              <path class="st71" stroke="#000" d="M27.5 44.409l12-12"/>
+            </g>
+            <g class="ld ld-swim-px" style="transform-origin:50px 50px 0;animation-duration:1.3s;animation-delay:-.89375s;animation-direction:normal">
+              <path class="st71" stroke="#000" d="M60.5 32.409l12 12"/>
+            </g>
+            <g class="ld ld-swim-px" style="transform-origin:50px 50px 0;animation-duration:1.3s;animation-delay:-.8125s;animation-direction:normal">
+              <path class="st71" stroke="#000" d="M60.5 44.409l12-12"/>
+            </g>
+          </g>
+          <style>
+            @keyframes ld-swim-px{0%,50%,to{-webkit-transform:translate(0,0) rotate(0deg);transform:translate(0,0) rotate(0deg)}12.5%{-webkit-transform:translate(1px,-2px) rotate(3deg);transform:translate(1px,-2px) rotate(3deg)}25%{-webkit-transform:translate(0,-3px) rotate(6deg);transform:translate(0,-3px) rotate(6deg)}37.5%{-webkit-transform:translate(-1px,-2px) rotate(3deg);transform:translate(-1px,-2px) rotate(3deg)}62.5%{-webkit-transform:translate(1px,2px) rotate(-3deg);transform:translate(1px,2px) rotate(-3deg)}75%{-webkit-transform:translate(0,3px) rotate(-6deg);transform:translate(0,3px) rotate(-6deg)}87.5%{-webkit-transform:translate(-1px,2px) rotate(-3deg);transform:translate(-1px,2px) rotate(-3deg)}}@-webkit-keyframes ld-swim-px{0%,50%,to{-webkit-transform:translate(0,0) rotate(0deg);transform:translate(0,0) rotate(0deg)}12.5%{-webkit-transform:translate(1px,-2px) rotate(3deg);transform:translate(1px,-2px) rotate(3deg)}25%{-webkit-transform:translate(0,-3px) rotate(6deg);transform:translate(0,-3px) rotate(6deg)}37.5%{-webkit-transform:translate(-1px,-2px) rotate(3deg);transform:translate(-1px,-2px) rotate(3deg)}62.5%{-webkit-transform:translate(1px,2px) rotate(-3deg);transform:translate(1px,2px) rotate(-3deg)}75%{-webkit-transform:translate(0,3px) rotate(-6deg);transform:translate(0,3px) rotate(-6deg)}87.5%{-webkit-transform:translate(-1px,2px) rotate(-3deg);transform:translate(-1px,2px) rotate(-3deg)}}line{stroke-width:0}.ld.ld-swim-px{-webkit-animation:ld-swim-px 3s infinite linear;animation:ld-swim-px 3s infinite linear}
+          </style>
+        </svg>
+      </svg>
+      <p class="disconnect__title">Упс!</p>
+      <p class="disconnect__subtitle">Во время запроса произошла ошибка.
+Возможно, проблема с соединением или сервер недоступен.
+Подождите немного и попробуйте ещё раз.</p>
+  </section>
   <section class="result result_hidden root__section">
     <div class="result__header">
         <h2 class="block__title">Результаты 
@@ -50,9 +82,10 @@
         <a class="block__link link" href="./analytics.html">Посмотреть&nbsp;аналитику&nbsp;&nbsp;&#x276F;</a>        
     </div>
     <div class="result__cardlist">
-            
+      
+      
     </div>
-    <button class="button result__button-show" type="submit">Показать ещё</button>
+    <button class="button result__button-show result__button-show_hidden" type="submit">Показать ещё</button>
   </section>
   <section class="author root__section">
     <img class="author__photo" src="<%=require('./images/author.png').default%>" alt="фото автора">

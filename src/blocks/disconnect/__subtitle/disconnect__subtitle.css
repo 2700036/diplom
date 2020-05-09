@@ -1,0 +1,21 @@
+.disconnect__subtitle {
+    
+    color: #B6BCBF; 
+    white-space: pre;
+    text-align: center;
+    margin-top: 16px;
+   
+}
+
+@media screen and (max-width: 770px) {
+    .disconnect__subtitle {
+        margin-bottom: 40px;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .disconnect__subtitle {
+        font-size: 14px;
+        white-space: normal;
+    }
+  }

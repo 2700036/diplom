@@ -6,6 +6,7 @@
 @import url(../blocks/header/header.css);
 @import url(../blocks/title/title.css);
 @import url(../blocks/description/description.css);
+@import url(../blocks/disconnect/disconnect.css);
 @import url(../blocks/block/block.css);
 @import url(../blocks/link/link.css);
 @import url(../blocks/search-wrapper/search-wrapper.css);

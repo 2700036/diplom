@@ -1,3 +1,5 @@
+@import url(./_hidden/result__button-show_hidden.css);
+
 .result__button-show {
     width: 288px;
     border-radius: 80px;

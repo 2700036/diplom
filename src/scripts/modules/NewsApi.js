@@ -1,4 +1,4 @@
-export class NewsAPI {
+export default class NewsAPI {
     constructor (opt){      
       this._language = opt.searchLanguage;
       this._fromDate = opt.weekAgoDate;
