@@ -1,5 +1,6 @@
 @import url(./__bullets/slider__bullets.css);
 @import url(./__button/slider__button.css);
+@import url(./_hidden/slider_hidden.css);
 @import url(./__card-author/slider__card-author.css);
 @import url(./__card-commit/slider__card-commit.css);
 @import url(./__card-date/slider__card-date.css);

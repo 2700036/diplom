@@ -6,5 +6,5 @@
     color: #B6BCBF;  
     display: flex;
     align-items: flex-start; 
-    white-space: pre;
+    width: 60px;
 }

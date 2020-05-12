@@ -48,9 +48,3 @@ export default class NewsCardList {
     }    
 }
 
-
-    
-    
-
-
-document.querySelector('.result__cardlist').innerHTML = '';
