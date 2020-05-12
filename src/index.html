@@ -27,7 +27,7 @@
         <p class="description">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
         <form class="search__form">
             <span class="searh__input-error searh__input-error_hidden">Нужно ввести ключевое слово</span>
-            <input id="input" type="text" class="searh__input" placeholder="Введите тему новости" minlength="2" maxlength="30" autocomplete="off" required>
+            <input id="input" type="text" class="searh__input" pattern="^[а-яА-Яa-zA-Z0-9]{1}[\sа-яА-Яa-zA-Z0-9,.-]+" placeholder="Введите тему новости" minlength="2" maxlength="30" autocomplete="off" required>
             <button class="button search__button" type="submit" disabled>Искать</button>
         </form>
       </div>     

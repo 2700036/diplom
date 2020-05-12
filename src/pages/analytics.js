@@ -8,5 +8,11 @@ const stats = document.querySelector('.stats');
 const table = document.querySelector('.table');
 
 const dataStorage = new DataStorage();
-const statistics = new Statistics({dayFields, barFields, dataStorage, stats, table});
-statistics.startStats();
+const statistics = new Statistics({
+  dayFields,
+  barFields,
+  dataStorage,
+  stats,
+  table
+});
+statistics.viewStats();

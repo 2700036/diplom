@@ -6,6 +6,7 @@ import NewsCard from '../scripts/components/NewsCard';
 import NewsCardList from '../scripts/components/NewsCardList';
 import {searchLanguage} from '../scripts/constants/constants';
 import {apiKey} from '../scripts/constants/constants';
+import {apiUrl} from '../scripts/constants/constants';
 import dateConverter from '../scripts/utils/dateConverter';
 
 const searchForm = document.querySelector('.search__form');
@@ -16,32 +17,46 @@ const disconnect = document.querySelector('.disconnect');
 
 const today = new Date();
 const weekAgo = new Date(Date.now() - 6 * 24 * 60 * 60 * 1000);
-const weekAgoDate = weekAgo.toJSON().slice(0, 10)
+const weekAgoDate = weekAgo.toJSON().slice(0, 10);
 const todayDate = today.toJSON().slice(0, 10);
-const newsAPI = new NewsAPI({searchLanguage, apiKey, weekAgoDate, todayDate});
+const newsAPI = new NewsAPI({searchLanguage, apiKey, weekAgoDate, todayDate, apiUrl});
 const dataStorage = new DataStorage();
 const getNewsfromStorage = () => dataStorage.getNews();
 const newsCard = new NewsCard(dateConverter);
-const createCard = (data) => newsCard.createCard(data);
-const newsCardList = new NewsCardList({resultSection, createCard, getNewsfromStorage, disconnect, notFound, preloader});
-const togglePreloader = (isLoading) => newsCardList.togglePreloader(isLoading);
+const createCard = data => newsCard.createCard(data);
+const newsCardList = new NewsCardList({
+  resultSection,
+  createCard,
+  getNewsfromStorage,
+  disconnect,
+  notFound,
+  preloader
+});
+const togglePreloader = isLoading => newsCardList.togglePreloader(isLoading);
 const clearResults = () => newsCardList.resetResults();
 
-const getSaveRender = (inputValue) => {return newsAPI.getNews(inputValue)
-    .then(res => {                 
-        if (res.articles.length > 0) {                         
+const getSaveRender = inputValue => {
+  return newsAPI
+    .getNews(inputValue)
+    .then(res => {      
+      if (res.articles.length > 0) {
         dataStorage.saveNews(res, inputValue);
         newsCardList.saveArrToList(getNewsfromStorage());
-        
         newsCardList.renderCards();
-        } else {newsCardList.nothingFound()}
-        })
-    .catch(err => {        
-        newsCardList.disconnect();
-        console.log(err);
+      } else {
+        newsCardList.nothingFound();
+      }
     })
-    .finally (() => togglePreloader(false));
-;}
+    .catch(err => {
+      newsCardList.disconnect();
+      console.log(err);
+    })
+    .finally(() => togglePreloader(false));
+};
 
-const searchInput = new SearchInput(getSaveRender, togglePreloader, clearResults, searchForm);
- 
+const searchInput = new SearchInput(
+  getSaveRender,
+  togglePreloader,
+  clearResults,
+  searchForm
+);

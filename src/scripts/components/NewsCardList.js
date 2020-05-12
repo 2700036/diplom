@@ -32,7 +32,7 @@ export default class NewsCardList {
         !this._section.classList.contains('result_hidden') ? this._section.classList.add('result_hidden') : 0;
         !this._notFound.classList.contains('not-found_hidden') ? this._notFound.classList.add('not-found_hidden') : 0;
         !this._disconnect.classList.contains('disconnect_hidden') ? this._disconnect.classList.add('disconnect_hidden') : 0;
-        this._container.innerHTML = '';
+        this._container.textContent = '';
     }
     _hideButton (){
         this._newsArr.length <= 3 ? this._button.classList.add('result__button-show_hidden') : 0;
