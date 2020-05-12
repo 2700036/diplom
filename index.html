@@ -8,7 +8,7 @@
   <meta name="author" content="Бирюков Сергей">
   <title>Что в мире творится?</title>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png">
-  <link rel="stylesheet" href="./styles/main.65232016252713a56468.css?de73c25839ec904a5fd0">  
+  <link rel="stylesheet" href="./styles/main.61d5a37601c6c5366acb.css?4ed795f04976e830acfd">  
 </head>
 <body>
   <div class="root"> 
@@ -26,8 +26,9 @@
  творится?</h1>
         <p class="description">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
         <form class="search__form">
-            <input id="input" type="text" class="searh__input" placeholder="Введите тему новости" minlength="2" maxlength="20" required>
-            <button class="button search__button" type="submit">Искать</button>
+            <span class="searh__input-error searh__input-error_hidden">Нужно ввести ключевое слово</span>
+            <input id="input" type="text" class="searh__input" pattern="^[а-яА-Яa-zA-Z0-9]{1}[\sа-яА-Яa-zA-Z0-9,.-]+" placeholder="Введите тему новости" minlength="2" maxlength="30" autocomplete="off" required>
+            <button class="button search__button" type="submit" disabled>Искать</button>
         </form>
       </div>     
     </div>    
@@ -45,7 +46,7 @@
   </section>
   <section class="disconnect disconnect_hidden">
       <svg class="disconnect__img" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background:0 0">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 100 100" style="transform-origin:50px 50px 0" xml:space="preserve">
+        <svg version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 100 100" style="transform-origin:50px 50px 0" xml:space="preserve">
           <g transform="scale(.6)" style="transform-origin:50px 50px 0">
             <style>
               .st71{fill:none;stroke-width:5;stroke:#000;stroke-miterlimit:10}
@@ -115,5 +116,5 @@
   </div>
 
 </body>
-<script src="./scripts/main.183d68c5e30515c5f8a9.js?de73c25839ec904a5fd0"></script>
+<script src="./scripts/main.c71869d59d39d88198c7.js?4ed795f04976e830acfd"></script>
 </html>
