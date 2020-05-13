@@ -19,4 +19,10 @@ export default class DataStorage {
   getTotal() {
     return localStorage.getItem('total');
   }
+  checkNews(){
+    return localStorage.length ? true : false;
+  }
+  clearStorage(){
+    localStorage.clear();
+  }
 }

@@ -9,6 +9,7 @@ import CommitCard from '../scripts/components/CommitCard';
 import CommitCardList from '../scripts/components/CommitCardList';
 import dateConverter from '../scripts/utils/dateConverter';
 import {apiUrl} from '../scripts/constants/constants';
+import {maxSlidesUnits} from '../scripts/constants/constants';
 
 const commitSection = document.querySelector('.slider');
 const gitHubApi = new GithubApi({gitUserName, gitUsersRepo, apiUrl});
@@ -24,7 +25,7 @@ const commitCardList = new CommitCardList({
 gitHubApi
   .getCommits()
   .then(res => {
-    res.slice(0, 21).reverse().forEach(el => {
+    res.slice(0, maxSlidesUnits).reverse().forEach(el => {
       commitCardList.addSlide(el);
     });
     commitCardList.showCommits();

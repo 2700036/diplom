@@ -8,6 +8,8 @@ import {searchLanguage} from '../scripts/constants/constants';
 import {apiKey} from '../scripts/constants/constants';
 import {apiUrl} from '../scripts/constants/constants';
 import dateConverter from '../scripts/utils/dateConverter';
+import {numberForShowCards} from '../scripts/constants/constants';
+
 
 const searchForm = document.querySelector('.search__form');
 const resultSection = document.querySelector('.result');
@@ -19,9 +21,17 @@ const today = new Date();
 const weekAgo = new Date(Date.now() - 6 * 24 * 60 * 60 * 1000);
 const weekAgoDate = weekAgo.toJSON().slice(0, 10);
 const todayDate = today.toJSON().slice(0, 10);
-const newsAPI = new NewsAPI({searchLanguage, apiKey, weekAgoDate, todayDate, apiUrl});
+const newsAPI = new NewsAPI({
+  searchLanguage,
+  apiKey,
+  weekAgoDate,
+  todayDate,
+  apiUrl
+});
 const dataStorage = new DataStorage();
 const getNewsfromStorage = () => dataStorage.getNews();
+const getThemefromStorage = () => dataStorage.getNewsTheme();
+const clearStorage = () => dataStorage.clearStorage();
 const newsCard = new NewsCard(dateConverter);
 const createCard = data => newsCard.createCard(data);
 const newsCardList = new NewsCardList({
@@ -30,7 +40,8 @@ const newsCardList = new NewsCardList({
   getNewsfromStorage,
   disconnect,
   notFound,
-  preloader
+  preloader,
+  numberForShowCards
 });
 const togglePreloader = isLoading => newsCardList.togglePreloader(isLoading);
 const clearResults = () => newsCardList.resetResults();
@@ -38,7 +49,7 @@ const clearResults = () => newsCardList.resetResults();
 const getSaveRender = inputValue => {
   return newsAPI
     .getNews(inputValue)
-    .then(res => {      
+    .then(res => {
       if (res.articles.length > 0) {
         dataStorage.saveNews(res, inputValue);
         newsCardList.saveArrToList(getNewsfromStorage());
@@ -50,13 +61,20 @@ const getSaveRender = inputValue => {
     .catch(err => {
       newsCardList.disconnect();
       console.log(err);
-    })
-    .finally(() => togglePreloader(false));
+    })    
 };
 
 const searchInput = new SearchInput(
   getSaveRender,
   togglePreloader,
   clearResults,
-  searchForm
+  searchForm,
+  getThemefromStorage,
+  clearStorage
 );
+
+if (dataStorage.checkNews()) {
+  searchInput.setRequestedTheme();
+  newsCardList.saveArrToList(getNewsfromStorage());
+  newsCardList.renderCards();
+}

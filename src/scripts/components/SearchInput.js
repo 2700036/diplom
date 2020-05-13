@@ -1,5 +1,5 @@
 export default class SearchInput {
-  constructor(foo, toggler, clear, form) {
+  constructor(foo, toggler, clear, form, getTheme, clearStorage) {
     this._getSaveRender = foo;
     this._togglePreloader = toggler;
     this._clearResults = clear;
@@ -7,6 +7,8 @@ export default class SearchInput {
     this._input = this._form.input;
     this._button = this._form.querySelector('.button');
     this._error = this._form.querySelector('.searh__input-error');
+    this._getThemefromStorage = getTheme;
+    this._clearStorage = clearStorage;
     this._setEventListeners(this._form);
   }
   _setEventListeners(form) {
@@ -17,9 +19,27 @@ export default class SearchInput {
     event.preventDefault();
     this._clearResults();
     this._togglePreloader(true);
-    localStorage.clear();
-    this._getSaveRender(this._input.value);
+    this._toggleDisableForm(true);
+    this._clearStorage();
+    this._getSaveRender(this._input.value).finally(() => {
+      this._togglePreloader(false);
+      this._toggleDisableForm(false);
+  });
   }
+  setRequestedTheme(){
+    this._input.value = this._getThemefromStorage();
+  }
+  _toggleDisableForm(isLoading){        
+    if(isLoading){
+      this._form.forEach(el => {
+        el.setAttribute('disabled', true);
+      });       
+    } else {
+      this._form.forEach(el => {
+        el.removeAttribute('disabled');
+      });        
+    }        
+}
   _validate(event) {
     if (!this._form.checkValidity()) {
       this._button.setAttribute('disabled', true);

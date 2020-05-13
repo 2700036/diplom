@@ -11,18 +11,19 @@ export default class NewsCardList {
         this._newsArr = [];
         this._showResults = this._showResults.bind(this);
         this._hideButton = this._hideButton.bind(this);
-        this._button.addEventListener('click', this.renderCards.bind(this));        
+        this._button.addEventListener('click', this.renderCards.bind(this)); 
+        this._numberForShow = opt.numberForShowCards;       
     }  
     saveArrToList (arr){
         this._newsArr = arr;
     }
     renderCards (){                     
-        this._newsArr.slice(0, 3).forEach(el => {
+        this._newsArr.slice(0, this._numberForShow).forEach(el => {
             this._container.appendChild(this._createCard(el));  
         });        
         this._showResults();        
         this._hideButton();
-        this._newsArr.splice(0, 3);        
+        this._newsArr.splice(0, this._numberForShow);        
     }
     _showResults (){
         this._section.classList.contains('result_hidden') ? this._section.classList.remove('result_hidden') : 0;

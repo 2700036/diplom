@@ -38,15 +38,15 @@ export default class Statistics {
         });
     }
     _setTableStats(){        
-        const date = [];
-        const weekDay = [];
+        const dates = [];
+        const weekDays = [];
         for (let i=6; i>=0; i--){
             const curDate = new Date(Date.now() - i * 24 * 60 * 60 * 1000);            
-            date.push(curDate.getDate());
-            weekDay.push(curDate.getDay())
+            dates.push(curDate.getDate());
+            weekDays.push(curDate.getDay())
         };       
         for (let i=0; i < this._tableDays.length; i++){            
-            this._tableDays[i].textContent = `${date[i]}, ${this._replaceDay(weekDay[i])}`;          
+            this._tableDays[i].textContent = `${dates[i]}, ${this._replaceDay(weekDays[i])}`;          
             this._tableBars[i].setAttribute('style', `width: ${this._daysBarsMatch(this._newsByDays, i)}%`);
             this._tableBars[i].style.width == '0%' ? this._tableBars[i].setAttribute('style', `padding-left: 0px`) : 0;
             this._tableBars[i].textContent = (this._daysBarsMatch(this._newsByDays, i)>1 ? this._daysBarsMatch(this._newsByDays, i) : '' );  
@@ -77,21 +77,8 @@ export default class Statistics {
         return weekDays[str];
     }
     _setTableMonth(){
-        const month = {
-            0: 'январь',
-            1: 'февраль',
-            2: 'март',
-            3: 'апрель',
-            4: 'май',
-            5: 'июнь',
-            6: 'июль',
-            7: 'август',
-            8: 'сентябрь',
-            9: 'октябрь',
-            10: 'ноябрь',
-            11: 'декабрь'
-        }
+        const month = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
         this._tableMonth.textContent = `Дата
-        (${month[new Date().getMonth()]})`; 
+        (${month[new Date().getMonth()]})`;      
     }
 }

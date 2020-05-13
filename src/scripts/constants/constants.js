@@ -3,6 +3,9 @@ export const apiKey = 'bdfd8c257cd74d43a9415a268476b3ea';
 export const apiUrl = process.env.NODE_ENV === 'development' ? 'http' : 'https'; 
 export const gitUserName = '2700036';
 export const gitUsersRepo = 'diplom';
+export const numberForShowCards = 3;
+export const maxSlidesUnits = 21;
+
 export const swiperConfig = {
   slidesPerView: 3.5,
   spaceBetween: 16,
