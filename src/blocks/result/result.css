@@ -1,7 +1,7 @@
+@import url(./_hidden/result_hidden.css);
 @import url(./__button-show/result__button-show.css);
 @import url(./__cardlist/result__cardlist.css);
 @import url(./__header/result__header.css);
-@import url(./_hidden/result_hidden.css);
 
 .result {
     padding-top: 5.5%;

@@ -1,0 +1,12 @@
+.disconnect__img {
+    width: 145px;
+    height: 145px;
+    margin-top: 40px;    
+}
+ 
+ @media screen and (max-width: 770px) {
+    .disconnect__img {
+       margin-top: 30px;
+       
+    }
+  }

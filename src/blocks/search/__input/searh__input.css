@@ -2,6 +2,7 @@
     height: 64px;
     width: 100%;
     background: #FFF;
+    
     border: 1px solid #D1D2D6;
     backdrop-filter: blur(8px);
     border-radius: 100px;
@@ -12,6 +13,7 @@
 .searh__input:focus {
     border: 1px solid #347EFF;
 }
+
 
 @media screen and (max-width: 770px) {
     .searh__input {

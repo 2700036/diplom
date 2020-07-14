@@ -25,9 +25,10 @@
         <h1 class="search__title">Что в мире
  творится?</h1>
         <p class="description">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
-        <form class="search__form" novalidate>
-            <input id="input" type="text" class="searh__input" placeholder="Введите тему новости" minlength="2" maxlength="20" required>
-            <button class="button search__button" type="submit">Искать</button>
+        <form class="search__form">
+            <span class="searh__input-error searh__input-error_hidden">Нужно ввести ключевое слово</span>
+            <input id="input" type="text" class="searh__input" pattern="^[а-яА-Яa-zA-Z0-9]{1}[\sа-яА-Яa-zA-Z0-9,.-]+" placeholder="Введите тему новости" minlength="2" maxlength="30" autocomplete="off" required>
+            <button class="button search__button" type="submit" disabled>Искать</button>
         </form>
       </div>     
     </div>    
@@ -43,6 +44,38 @@
       <p class="not-found__subtitle">К сожалению по вашему запросу
 ничего не найдено.</p>
   </section>
+  <section class="disconnect disconnect_hidden">
+      <svg class="disconnect__img" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background:0 0">
+        <svg version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 100 100" style="transform-origin:50px 50px 0" xml:space="preserve">
+          <g transform="scale(.6)" style="transform-origin:50px 50px 0">
+            <style>
+              .st71{fill:none;stroke-width:5;stroke:#000;stroke-miterlimit:10}
+            </style>
+            <circle cx="50" cy="50" r="40" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="6" style="fill:#fff;stroke:#000;stroke-miterlimit:10;stroke-width:1"/>
+            <path d="M31.866 71.591c2.57-7.556 9.709-13 18.134-13s15.564 5.444 18.134 13" stroke="#000" stroke-linecap="round" fill="none" stroke-width="5" stroke-miterlimit="10" style="stroke:#000;stroke-linecap:round;fill:none;stroke-width:1;stroke-miterlimit:10"/>
+            <g class="ld ld-swim-px" style="transform-origin:50px 50px 0;animation-duration:1.3s;animation-delay:-1.05625s;animation-direction:normal">
+              <path class="st71" stroke="#000" d="M27.5 32.409l12 12"/>
+            </g>
+            <g class="ld ld-swim-px" style="transform-origin:50px 50px 0;animation-duration:1.3s;animation-delay:-.975s;animation-direction:normal">
+              <path class="st71" stroke="#000" d="M27.5 44.409l12-12"/>
+            </g>
+            <g class="ld ld-swim-px" style="transform-origin:50px 50px 0;animation-duration:1.3s;animation-delay:-.89375s;animation-direction:normal">
+              <path class="st71" stroke="#000" d="M60.5 32.409l12 12"/>
+            </g>
+            <g class="ld ld-swim-px" style="transform-origin:50px 50px 0;animation-duration:1.3s;animation-delay:-.8125s;animation-direction:normal">
+              <path class="st71" stroke="#000" d="M60.5 44.409l12-12"/>
+            </g>
+          </g>
+          <style>
+            @keyframes ld-swim-px{0%,50%,to{-webkit-transform:translate(0,0) rotate(0deg);transform:translate(0,0) rotate(0deg)}12.5%{-webkit-transform:translate(1px,-2px) rotate(3deg);transform:translate(1px,-2px) rotate(3deg)}25%{-webkit-transform:translate(0,-3px) rotate(6deg);transform:translate(0,-3px) rotate(6deg)}37.5%{-webkit-transform:translate(-1px,-2px) rotate(3deg);transform:translate(-1px,-2px) rotate(3deg)}62.5%{-webkit-transform:translate(1px,2px) rotate(-3deg);transform:translate(1px,2px) rotate(-3deg)}75%{-webkit-transform:translate(0,3px) rotate(-6deg);transform:translate(0,3px) rotate(-6deg)}87.5%{-webkit-transform:translate(-1px,2px) rotate(-3deg);transform:translate(-1px,2px) rotate(-3deg)}}@-webkit-keyframes ld-swim-px{0%,50%,to{-webkit-transform:translate(0,0) rotate(0deg);transform:translate(0,0) rotate(0deg)}12.5%{-webkit-transform:translate(1px,-2px) rotate(3deg);transform:translate(1px,-2px) rotate(3deg)}25%{-webkit-transform:translate(0,-3px) rotate(6deg);transform:translate(0,-3px) rotate(6deg)}37.5%{-webkit-transform:translate(-1px,-2px) rotate(3deg);transform:translate(-1px,-2px) rotate(3deg)}62.5%{-webkit-transform:translate(1px,2px) rotate(-3deg);transform:translate(1px,2px) rotate(-3deg)}75%{-webkit-transform:translate(0,3px) rotate(-6deg);transform:translate(0,3px) rotate(-6deg)}87.5%{-webkit-transform:translate(-1px,2px) rotate(-3deg);transform:translate(-1px,2px) rotate(-3deg)}}line{stroke-width:0}.ld.ld-swim-px{-webkit-animation:ld-swim-px 3s infinite linear;animation:ld-swim-px 3s infinite linear}
+          </style>
+        </svg>
+      </svg>
+      <p class="disconnect__title">Упс!</p>
+      <p class="disconnect__subtitle">Во время запроса произошла ошибка.
+Возможно, проблема с соединением или сервер недоступен.
+Подождите немного и попробуйте ещё раз.</p>
+  </section>
   <section class="result result_hidden root__section">
     <div class="result__header">
         <h2 class="block__title">Результаты 
@@ -50,50 +83,10 @@
         <a class="block__link link" href="./analytics.html">Посмотреть&nbsp;аналитику&nbsp;&nbsp;&#x276F;</a>        
     </div>
     <div class="result__cardlist">
-        <a class="card link" href="">
-            <img class="card__image" src="<%=require('./images/cardimg.jpg').default%>" alt="фото новости">
-            <p class="card__date">2 августа, 2019</p>
-            <p class="card__title">Национальное достояние – парки</p>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="card__source">РИА</p>
-          </a>
-        <a class="card link" href="">
-            <img class="card__image" src="<%=require('./images/cardimg.jpg').default%>" alt="фото новости">
-            <p class="card__date">2 августа, 2019</p>
-            <p class="card__title">Лесные огоньки: история одной фотографии</p>
-            <p class="card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
-            <p class="card__source">РИА</p>
-          </a>
-      <a class="card link" href="">
-        <img class="card__image" src="<%=require('./images/cardimg.jpg').default%>" alt="фото новости">
-        <p class="card__date">2 августа, 2019</p>
-        <p class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</p>
-        <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где</p>
-        <p class="card__source">РИА</p>
-      </a>
-      <a class="card link" href="">
-          <img class="card__image" src="<%=require('./images/cardimg.jpg').default%>" alt="фото новости">
-          <p class="card__date">2 августа, 2019</p>
-          <p class="card__title">Лесные огоньки: история одной фотографии</p>
-          <p class="card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
-          <p class="card__source">РИА</p>
-      </a>
-      <a class="card link" href="">
-          <img class="card__image" src="<%=require('./images/cardimg.jpg').default%>" alt="фото новости">
-          <p class="card__date">2 августа, 2019</p>
-          <p class="card__title">Лесные огоньки: история одной фотографии</p>
-          <p class="card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
-          <p class="card__source">РИА</p>
-      </a>
-      <a class="card link" href="">
-          <img class="card__image" src="<%=require('./images/cardimg.jpg').default%>" alt="фото новости">
-          <p class="card__date">2 августа, 2019</p>
-          <p class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</p>
-          <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где</p>
-          <p class="card__source">РИА</p>
-      </a>      
+      
+      
     </div>
-    <button class="button result__button-show" type="submit">Показать ещё</button>
+    <button class="button result__button-show result__button-show_hidden" type="submit">Показать ещё</button>
   </section>
   <section class="author root__section">
     <img class="author__photo" src="<%=require('./images/author.png').default%>" alt="фото автора">
@@ -112,10 +105,10 @@
         <li class="footer__menu-item"><a class="link" href="https://praktikum.yandex.ru/">Яндекс.Практиукум</a></li>
       </ul>
       <ul class="footer__social-menu menu">
-        <li class="footer__social-menu-item"><a class="link" href="https://github.com/2700036">
+        <li class="footer__social-menu-item"><a class="link" href="https://github.com/2700036" target="_blank">
           <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           </a></li>
-        <li class="footer__social-menu-item"><a class="link" href="https://www.facebook.com/profile.php?id=100008651322885">
+        <li class="footer__social-menu-item"><a class="link" href="https://www.facebook.com/profile.php?id=100008651322885" target="_blank">
             <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
           </a></li>        
       </ul>

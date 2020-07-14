@@ -5,8 +5,7 @@
 @import url(./__title/card__title.css);
 
 .card {
-  position: relative;
-  
+  position: relative;  
   width: 100%;   
   display: flex;
   flex-direction: column;
